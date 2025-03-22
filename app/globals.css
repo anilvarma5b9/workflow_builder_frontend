@@ -1,0 +1,143 @@
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Light Theme Variables */
+  --background-side-menu: #1F2937;                 /* bg-gray-800 */
+  --background-main: #FFFFFF;                      /* bg-white */
+  --background-main-card: #F3F4F6;                 /* bg-gray-100 */
+  --background-main-card-hover: #E5E7EB;           /* bg-gray-200 */
+  --background-main-card-selected: #D1D5DB;        /* bg-gray-300 */
+  --background-secondary: #F3F4F6;                 /* bg-gray-100 */
+  --background-secondary-card: #FFFFFF;            /* bg-white */
+  --background-secondary-card-hover: #E5E7EB;      /* bg-gray-200 */
+  --background-secondary-card-selected: #D1D5DB;   /* bg-gray-300 */
+  --foreground-main: #111827;                      /* text-gray-900 */
+  --foreground-secondary: #1F2937;                 /* text-gray-800 */
+  --border-light: #4B5563;                         /* border-gray-600 */
+  --border-medium: #374151;                        /* border-gray-700 */
+  --border-dark: #1F2937;                          /* border-gray-800 */
+}
+
+[data-theme="dark"],
+.theme-dark {
+  --background-side-menu: #1F2937;                 /* bg-gray-800 */
+  --background-main: #111827;                      /* bg-gray-900 */
+  --background-main-card: #1F2937;                 /* bg-gray-800 */
+  --background-main-card-hover: #374151;           /* bg-gray-700 */
+  --background-main-card-selected: #4B5563;        /* bg-gray-600 */
+  --background-secondary: #1A1F2B;                 /* bg-gray-850 */
+  --background-secondary-card: #1F2937;            /* bg-gray-800 */
+  --background-secondary-card-hover: #374151;      /* bg-gray-700 */
+  --background-secondary-card-selected: #4B5563;   /* bg-gray-600 */
+  --foreground-main: #F9FAFB;                      /* text-gray-100 */
+  --foreground-secondary: #D1D5DB;                 /* text-gray-300 */
+  --border-light: #6B7280;                         /* border-gray-500 */
+  --border-medium: #9CA3AF;                        /* border-gray-400 */
+  --border-dark: #D1D5DB;                          /* border-gray-300 */
+}
+
+
+[data-theme="light"],
+.theme-light {
+  --background-side-menu: #1F2937;                 /* bg-gray-800 */
+  --background-main: #FFFFFF;                      /* bg-white */
+  --background-main-card: #F3F4F6;                 /* bg-gray-100 */
+  --background-main-card-hover: #E5E7EB;           /* bg-gray-200 */
+  --background-main-card-selected: #D1D5DB;        /* bg-gray-300 */
+  --background-secondary: #F3F4F6;                 /* bg-gray-100 */
+  --background-secondary-card: #FFFFFF;            /* bg-white */
+  --background-secondary-card-hover: #E5E7EB;      /* bg-gray-200 */
+  --background-secondary-card-selected: #D1D5DB;   /* bg-gray-300 */
+  --foreground-main: #111827;                      /* text-gray-900 */
+  --foreground-secondary: #1F2937;                 /* text-gray-800 */
+  --border-light: #4B5563;                         /* border-gray-600 */
+  --border-medium: #374151;                        /* border-gray-700 */
+  --border-dark: #1F2937;                          /* border-gray-800 */
+}
+
+/* Auto Theme Behavior */
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    --background-side-menu: #1F2937;                 /* bg-gray-800 */
+    --background-main: #FFFFFF;                      /* bg-white */
+    --background-main-card: #F3F4F6;                 /* bg-gray-100 */
+    --background-main-card-hover: #E5E7EB;           /* bg-gray-200 */
+    --background-main-card-selected: #D1D5DB;        /* bg-gray-300 */
+    --background-secondary: #F3F4F6;                 /* bg-gray-100 */
+    --background-secondary-card: #FFFFFF;            /* bg-white */
+    --background-secondary-card-hover: #E5E7EB;      /* bg-gray-200 */
+    --background-secondary-card-selected: #D1D5DB;   /* bg-gray-300 */
+    --foreground-main: #111827;                      /* text-gray-900 */
+    --foreground-secondary: #1F2937;                 /* text-gray-800 */
+    --border-light: #6B7280;                         /* border-gray-500 */
+    --border-medium: #9CA3AF;                        /* border-gray-400 */
+    --border-dark: #D1D5DB;                          /* border-gray-300 */
+    --template-color-primary: #2563EB;               /* Default Primary (Blue) */
+    --template-color-secondary: #EAB308;             /* Default Secondary (Yellow) */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme="auto"] {
+    --background-side-menu: #1F2937;                 /* bg-gray-800 */
+    --background-main: #FFFFFF;                      /* bg-white */
+    --background-main-card: #F3F4F6;                 /* bg-gray-100 */
+    --background-main-card-hover: #E5E7EB;           /* bg-gray-200 */
+    --background-main-card-selected: #D1D5DB;        /* bg-gray-300 */
+    --background-secondary: #F3F4F6;                 /* bg-gray-100 */
+    --background-secondary-card: #FFFFFF;            /* bg-white */
+    --background-secondary-card-hover: #E5E7EB;      /* bg-gray-200 */
+    --background-secondary-card-selected: #D1D5DB;   /* bg-gray-300 */
+    --foreground-main: #111827;                      /* text-gray-900 */
+    --foreground-secondary: #1F2937;                 /* text-gray-800 */
+    --border-light: #4B5563;                         /* border-gray-600 */
+    --border-medium: #374151;                        /* border-gray-700 */
+    --border-dark: #1F2937;                          /* border-gray-800 */
+    --template-color-primary: #2563EB;               /* Default Primary (Blue) */
+    --template-color-secondary: #EAB308;             /* Default Secondary (Yellow) */
+  }
+}
+
+body {
+  background: var(--background-main);
+  color: var(--foreground-main);
+  font-family: var(--font-inter);
+}
+
+.header-height {
+  height: 4rem;
+}
+
+.global-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Higher than the modal */
+}
+
+.global-loader .spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--template-color-primary);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
