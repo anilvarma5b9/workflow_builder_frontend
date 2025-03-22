@@ -34,12 +34,7 @@ const LanguageSelector = () => {
   const getLanguageName = (langCode: string): string => {
     const languageMap: Record<string, string> = {
       en: "English",
-      fr: "French",
-      es: "Spanish",
-      de: "German",
       hi: "Hindi",
-      te: "Telugu",
-      ml: "Malayalam",
     };
     return languageMap[langCode] || "Unknown";
   };
@@ -93,9 +88,8 @@ const LanguageSelector = () => {
               <li key={lang.code}>
                 <button
                   onClick={() => changeLanguage(lang.code)}
-                  className={`w-full text-left px-4 py-2 hover:bg-background-main-card-hover ${
-                    language === lang.code ? "bg-background-main-card-selected" : ""
-                  }`}
+                  className={`w-full text-left px-4 py-2 hover:bg-background-main-card-hover ${language === lang.code ? "bg-background-main-card-selected" : ""
+                    }`}
                 >
                   {lang.name}
                 </button>
