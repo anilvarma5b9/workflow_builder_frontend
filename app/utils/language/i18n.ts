@@ -1,29 +1,19 @@
 "use client";
 
 import en from "@/locales/en.json";
-import fr from "@/locales/fr.json";
-import es from "@/locales/es.json";
-import de from "@/locales/de.json";
 import hi from "@/locales/hi.json";
-import te from "@/locales/te.json";
-import ml from "@/locales/ml.json";
 import { useLayout } from "@/app/LayoutContext";
 
 // Define a type that allows deeply nested objects
 type NestedTranslationObject = { [key: string]: string | NestedTranslationObject };
 
 // Define allowed language keys
-type TranslationKeys = "en" | "fr" | "es" | "de" | "hi" | "te" | "ml";
+type TranslationKeys = "en" | "hi";
 
 // Define translations object with correct typing
 const translations: Record<TranslationKeys, NestedTranslationObject> = {
   en,
-  fr,
-  es,
-  de,
   hi,
-  te,
-  ml,
 };
 
 /**
